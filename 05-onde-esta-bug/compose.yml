@@ -1,0 +1,33 @@
+
+services:
+  postgre:
+    image: postgres:13.16
+    restart: always
+    environment:
+      POSTGRES_USER: ecommerce
+      POSTGRES_DB: fakeshop
+      POSTGRES_PASSWORD: pg1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgre_data:/var/lib/postgresql/data
+
+  ecommerce:
+    image: fabricioveronez/fake-shop
+    restart: always
+    environment:
+      DB_HOST: postgre
+      # --- CORREÇÕES  ---
+      DB_USER: ecommerce     # <-- CORRIGIDO (era fakeshop)
+      DB_PASSWORD: pg1234    # <-- CORRIGIDO (era Pg1234)
+      DB_NAME: fakeshop      # <-- CORRIGIDO (era ecommerce)
+      # --- FIM DAS CORREÇÕES ---
+      DB_PORT: "5432"
+      FLASK_APP: index.py
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgre
+
+volumes:
+  postgre_data:
