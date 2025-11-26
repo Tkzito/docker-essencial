@@ -1,0 +1,15 @@
+services:
+  # Nome do serviço no Docker Compose
+  video-converter:
+    # Build: Constrói a imagem usando o Dockerfile no diretório atual (.)
+    build: .
+
+    # Nome da imagem que será criada
+    image: rota42-converter:latest
+
+    # Volumes: Mapeia arquivos do seu computador para dentro do container.
+    # Sintaxe: "caminho_host:caminho_container"
+    # Aqui, mapeamos o diretório atual (.) para /app/data no container.
+    # Isso permite que você coloque um vídeo na pasta do projeto e o container consiga acessá-lo em /app/data.
+    volumes:
+      - .:/app
