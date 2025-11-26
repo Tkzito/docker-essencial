@@ -1,0 +1,697 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Docker Scout",
+          "informationUri": "https://docker.com/products/docker-scout",
+          "name": "docker scout",
+          "rules": [
+            {
+              "id": "CVE-2024-47764",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-47764: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-47764?s=github&n=cookie&t=npm&vr=%3C0.7.0",
+              "help": {
+                "text": "### Impact\n\nThe cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. For example, `serialize(\"userName=<script>alert('XSS3')</script>; Max-Age=2592000; a\", value)` would result in `\"userName=<script>alert('XSS3')</script>; Max-Age=2592000; a=test\"`, setting `userName` cookie to `<script>` and ignoring `value`.\n\nA similar escape can be used for `path` and `domain`, which could be abused to alter other fields of the cookie.\n\n### Patches\n\nUpgrade to 0.7.0, which updates the validation for `name`, `path`, and `domain`.\n\n### Workarounds\n\nAvoid passing untrusted or arbitrary values for these fields, ensure they are set by the application instead of user input.\n\n### References\n\n* https://github.com/jshttp/cookie/pull/167\n",
+                "markdown": "> ### Impact\n\nThe cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. For example, `serialize(\"userName=<script>alert('XSS3')</script>; Max-Age=2592000; a\", value)` would result in `\"userName=<script>alert('XSS3')</script>; Max-Age=2592000; a=test\"`, setting `userName` cookie to `<script>` and ignoring `value`.\n\nA similar escape can be used for `path` and `domain`, which could be abused to alter other fields of the cookie.\n\n### Patches\n\nUpgrade to 0.7.0, which updates the validation for `name`, `path`, and `domain`.\n\n### Workarounds\n\nAvoid passing untrusted or arbitrary values for these fields, ensure they are set by the application instead of user input.\n\n### References\n\n* https://github.com/jshttp/cookie/pull/167\n\n|                |                      |\n|----------------|----------------------|\n| Package        | pkg:npm/cookie@0.5.0 |\n| Affected range | <0.7.0               |\n| Fixed version  | 0.7.0                |\n"
+              },
+              "properties": {
+                "affected_version": "<0.7.0",
+                "cvssV3_severity": "LOW",
+                "fixed_version": "0.7.0",
+                "purls": [
+                  "pkg:npm/cookie@0.5.0"
+                ],
+                "security-severity": "3.1",
+                "tags": [
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-5889",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2025-5889: Uncontrolled Resource Consumption"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2025-5889?s=github&n=brace-expansion&t=npm&vr=%3E%3D2.0.0%2C%3C%3D2.0.1",
+              "help": {
+                "text": "A vulnerability was found in juliangruber brace-expansion up to 1.1.11/2.0.1/3.0.0/4.0.0. It has been rated as problematic. Affected by this issue is the function expand of the file index.js. The manipulation leads to inefficient regular expression complexity. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 1.1.12, 2.0.2, 3.0.1 and 4.0.1 is able to address this issue. The name of the patch is `a5b98a4f30d7813266b221435e1eaaf25a1b0ac5`. It is recommended to upgrade the affected component.\n",
+                "markdown": "> A vulnerability was found in juliangruber brace-expansion up to 1.1.11/2.0.1/3.0.0/4.0.0. It has been rated as problematic. Affected by this issue is the function expand of the file index.js. The manipulation leads to inefficient regular expression complexity. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 1.1.12, 2.0.2, 3.0.1 and 4.0.1 is able to address this issue. The name of the patch is `a5b98a4f30d7813266b221435e1eaaf25a1b0ac5`. It is recommended to upgrade the affected component.\n\n|                |                                                                                                                                                                                |\n|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Package        | pkg:npm/brace-expansion@2.0.1                                                                                                                                                  |\n| Affected range | >=2.0.0,<=2.0.1                                                                                                                                                                |\n| Fixed version  | 2.0.2                                                                                                                                                                          |\n| CVSS Score     |                                                                                                                                                                            1.3 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X |\n"
+              },
+              "properties": {
+                "affected_version": ">=1.0.0,<=1.1.11",
+                "cvssV3": 1.3,
+                "cvssV3_severity": "LOW",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X",
+                "fixed_version": "1.1.12",
+                "purls": [
+                  "pkg:npm/brace-expansion@1.1.11",
+                  "pkg:npm/brace-expansion@2.0.1"
+                ],
+                "security-severity": "1.3",
+                "tags": [
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-43796",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-43796: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-43796?s=github&n=express&t=npm&vr=%3C4.20.0",
+              "help": {
+                "text": "### Impact\n\nIn express <4.20.0, passing untrusted user input - even after sanitizing it - to `response.redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in express 4.20.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n\n",
+                "markdown": "> ### Impact\n\nIn express <4.20.0, passing untrusted user input - even after sanitizing it - to `response.redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in express 4.20.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n\n\n|                |                                                                 |\n|----------------|-----------------------------------------------------------------|\n| Package        | pkg:npm/express@4.18.1                                          |\n| Affected range | <4.20.0                                                         |\n| Fixed version  | 4.20.0                                                          |\n| CVSS Score     |                                                             2.3 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L |\n"
+              },
+              "properties": {
+                "affected_version": "<4.20.0",
+                "cvssV3": 2.3,
+                "cvssV3_severity": "LOW",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L",
+                "fixed_version": "4.20.0",
+                "purls": [
+                  "pkg:npm/express@4.18.1"
+                ],
+                "security-severity": "2.3",
+                "tags": [
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-43799",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-43799: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-43799?s=github&n=send&t=npm&vr=%3C0.19.0",
+              "help": {
+                "text": "### Impact\n\npassing untrusted user input - even after sanitizing it - to `SendStream.redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in send 0.19.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n",
+                "markdown": "> ### Impact\n\npassing untrusted user input - even after sanitizing it - to `SendStream.redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in send 0.19.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n\n|                |                                                                 |\n|----------------|-----------------------------------------------------------------|\n| Package        | pkg:npm/send@0.18.0                                             |\n| Affected range | <0.19.0                                                         |\n| Fixed version  | 0.19.0                                                          |\n| CVSS Score     |                                                             2.3 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L |\n"
+              },
+              "properties": {
+                "affected_version": "<0.19.0",
+                "cvssV3": 2.3,
+                "cvssV3_severity": "LOW",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L",
+                "fixed_version": "0.19.0",
+                "purls": [
+                  "pkg:npm/send@0.18.0"
+                ],
+                "security-severity": "2.3",
+                "tags": [
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-43800",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-43800: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-43800?s=github&n=serve-static&t=npm&vr=%3C1.16.0",
+              "help": {
+                "text": "### Impact\n\npassing untrusted user input - even after sanitizing it - to `redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in serve-static 1.16.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n\n",
+                "markdown": "> ### Impact\n\npassing untrusted user input - even after sanitizing it - to `redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in serve-static 1.16.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n\n\n|                |                                                                 |\n|----------------|-----------------------------------------------------------------|\n| Package        | pkg:npm/serve-static@1.15.0                                     |\n| Affected range | <1.16.0                                                         |\n| Fixed version  | 1.16.0                                                          |\n| CVSS Score     |                                                             2.3 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L |\n"
+              },
+              "properties": {
+                "affected_version": "<1.16.0",
+                "cvssV3": 2.3,
+                "cvssV3_severity": "LOW",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L",
+                "fixed_version": "1.16.0",
+                "purls": [
+                  "pkg:npm/serve-static@1.15.0"
+                ],
+                "security-severity": "2.3",
+                "tags": [
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2023-22580",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2023-22580: Exposure of Sensitive Information to an Unauthorized Actor"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2023-22580?s=github&n=sequelize&t=npm&vr=%3C6.28.1",
+              "help": {
+                "text": "Due to improper input filtering in the sequelize js library, can malicious queries lead to sensitive information disclosure.\n",
+                "markdown": "> Due to improper input filtering in the sequelize js library, can malicious queries lead to sensitive information disclosure.\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/sequelize@6.19.0                     |\n| Affected range | <6.28.1                                      |\n| Fixed version  | 6.28.1                                       |\n| CVSS Score     |                                          5.3 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N |\n"
+              },
+              "properties": {
+                "affected_version": "<6.28.1",
+                "cvssV3": 5.3,
+                "cvssV3_severity": "MEDIUM",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+                "fixed_version": "6.28.1",
+                "purls": [
+                  "pkg:npm/sequelize@6.19.0"
+                ],
+                "security-severity": "5.3",
+                "tags": [
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-29041",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-29041: Improper Validation of Syntactic Correctness of Input"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-29041?s=github&n=express&t=npm&vr=%3C4.19.2",
+              "help": {
+                "text": "### Impact\n\nVersions of Express.js prior to 4.19.2 and pre-release alpha and beta versions before 5.0.0-beta.3 are affected by an open redirect vulnerability using malformed URLs.\n\nWhen a user of Express performs a redirect using a user-provided URL Express performs an encode [using `encodeurl`](https://github.com/pillarjs/encodeurl) on the contents before passing it to the `location` header. This can cause malformed URLs to be evaluated in unexpected ways by common redirect allow list implementations in Express applications, leading to an Open Redirect via bypass of a properly implemented allow list.\n\nThe main method impacted is `res.location()` but this is also called from within `res.redirect()`.\n\n### Patches\n\nhttps://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd\nhttps://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94\n\nAn initial fix went out with `express@4.19.0`, we then patched a feature regression in `4.19.1` and added improved handling for the bypass in `4.19.2`.\n\n### Workarounds\n\nThe fix for this involves pre-parsing the url string with either `require('node:url').parse` or `new URL`. These are steps you can take on your own before passing the user input string to `res.location` or `res.redirect`.\n\n### References\n\nhttps://github.com/expressjs/express/pull/5539\nhttps://github.com/koajs/koa/issues/1800\nhttps://expressjs.com/en/4x/api.html#res.location\n",
+                "markdown": "> ### Impact\n\nVersions of Express.js prior to 4.19.2 and pre-release alpha and beta versions before 5.0.0-beta.3 are affected by an open redirect vulnerability using malformed URLs.\n\nWhen a user of Express performs a redirect using a user-provided URL Express performs an encode [using `encodeurl`](https://github.com/pillarjs/encodeurl) on the contents before passing it to the `location` header. This can cause malformed URLs to be evaluated in unexpected ways by common redirect allow list implementations in Express applications, leading to an Open Redirect via bypass of a properly implemented allow list.\n\nThe main method impacted is `res.location()` but this is also called from within `res.redirect()`.\n\n### Patches\n\nhttps://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd\nhttps://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94\n\nAn initial fix went out with `express@4.19.0`, we then patched a feature regression in `4.19.1` and added improved handling for the bypass in `4.19.2`.\n\n### Workarounds\n\nThe fix for this involves pre-parsing the url string with either `require('node:url').parse` or `new URL`. These are steps you can take on your own before passing the user input string to `res.location` or `res.redirect`.\n\n### References\n\nhttps://github.com/expressjs/express/pull/5539\nhttps://github.com/koajs/koa/issues/1800\nhttps://expressjs.com/en/4x/api.html#res.location\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/express@4.18.1                       |\n| Affected range | <4.19.2                                      |\n| Fixed version  | 4.19.2                                       |\n| CVSS Score     |                                          6.1 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N |\n"
+              },
+              "properties": {
+                "affected_version": "<4.19.2",
+                "cvssV3": 6.1,
+                "cvssV3_severity": "MEDIUM",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                "fixed_version": "4.19.2",
+                "purls": [
+                  "pkg:npm/express@4.18.1"
+                ],
+                "security-severity": "6.1",
+                "tags": [
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-56200",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2025-56200: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2025-56200?s=github&n=validator&t=npm&vr=%3C13.15.20",
+              "help": {
+                "text": "A URL validation bypass vulnerability exists in validator.js prior to version 13.15.20. The isURL() function uses '://' as a delimiter to parse protocols, while browsers use ':' as the delimiter. This parsing difference allows attackers to bypass protocol and domain validation by crafting URLs leading to XSS and Open Redirect attacks.\n",
+                "markdown": "> A URL validation bypass vulnerability exists in validator.js prior to version 13.15.20. The isURL() function uses '://' as a delimiter to parse protocols, while browsers use ':' as the delimiter. This parsing difference allows attackers to bypass protocol and domain validation by crafting URLs leading to XSS and Open Redirect attacks.\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/validator@13.11.0                    |\n| Affected range | <13.15.20                                    |\n| Fixed version  | 13.15.20                                     |\n| CVSS Score     |                                          6.1 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N |\n"
+              },
+              "properties": {
+                "affected_version": "<13.15.20",
+                "cvssV3": 6.1,
+                "cvssV3_severity": "MEDIUM",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                "fixed_version": "13.15.20",
+                "purls": [
+                  "pkg:npm/validator@13.11.0"
+                ],
+                "security-severity": "6.1",
+                "tags": [
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-33883",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-33883: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-33883?s=github&n=ejs&t=npm&vr=%3C3.1.10",
+              "help": {
+                "text": "The ejs (aka Embedded JavaScript templates) package before 3.1.10 for Node.js lacks certain pollution protection.\n",
+                "markdown": "> The ejs (aka Embedded JavaScript templates) package before 3.1.10 for Node.js lacks certain pollution protection.\n\n|                |                                                                 |\n|----------------|-----------------------------------------------------------------|\n| Package        | pkg:npm/ejs@3.1.7                                               |\n| Affected range | <3.1.10                                                         |\n| Fixed version  | 3.1.10                                                          |\n| CVSS Score     |                                                             6.9 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N |\n"
+              },
+              "properties": {
+                "affected_version": "<3.1.10",
+                "cvssV3": 6.9,
+                "cvssV3_severity": "MEDIUM",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+                "fixed_version": "3.1.10",
+                "purls": [
+                  "pkg:npm/ejs@3.1.7"
+                ],
+                "security-severity": "6.9",
+                "tags": [
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-45296",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-45296: Inefficient Regular Expression Complexity"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-45296?s=github&n=path-to-regexp&t=npm&vr=%3C0.1.10",
+              "help": {
+                "text": "### Impact\n\nA bad regular expression is generated any time you have two parameters within a single segment, separated by something that is not a period (`.`). For example, `/:a-:b`.\n\n### Patches\n\nFor users of 0.1, upgrade to `0.1.10`. All other users should upgrade to `8.0.0`.\n\nThese versions add backtrack protection when a custom regex pattern is not provided:\n\n- [0.1.10](https://github.com/pillarjs/path-to-regexp/releases/tag/v0.1.10)\n- [1.9.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v1.9.0)\n- [3.3.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v3.3.0)\n- [6.3.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v6.3.0)\n\nThey do not protect against vulnerable user supplied capture groups. Protecting against explicit user patterns is out of scope for old versions and not considered a vulnerability.\n\nVersion [7.1.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v7.1.0) can enable `strict: true` and get an error when the regular expression might be bad.\n\nVersion [8.0.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v8.0.0) removes the features that can cause a ReDoS.\n\n### Workarounds\n\nAll versions can be patched by providing a custom regular expression for parameters after the first in a single segment. As long as the custom regular expression does not match the text before the parameter, you will be safe. For example, change `/:a-:b` to `/:a-:b([^-/]+)`.\n\nIf paths cannot be rewritten and versions cannot be upgraded, another alternative is to limit the URL length. For example, halving the attack string improves performance by 4x faster.\n\n### Details\n\nUsing `/:a-:b` will produce the regular expression `/^\\/([^\\/]+?)-([^\\/]+?)\\/?$/`. This can be exploited by a path such as `/a${'-a'.repeat(8_000)}/a`. [OWASP](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS) has a good example of why this occurs, but the TL;DR is the `/a` at the end ensures this route would never match but due to naive backtracking it will still attempt every combination of the `:a-:b` on the repeated 8,000 `-a`.\n\nBecause JavaScript is single threaded and regex matching runs on the main thread, poor performance will block the event loop and can lead to a DoS. In local benchmarks, exploiting the unsafe regex will result in performance that is over 1000x worse than the safe regex. In a more realistic environment using Express v4 and 10 concurrent connections, this translated to average latency of ~600ms vs 1ms.\n\n### References\n\n* [OWASP](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS)\n* [Detailed blog post](https://blakeembrey.com/posts/2024-09-web-redos/)\n",
+                "markdown": "> ### Impact\n\nA bad regular expression is generated any time you have two parameters within a single segment, separated by something that is not a period (`.`). For example, `/:a-:b`.\n\n### Patches\n\nFor users of 0.1, upgrade to `0.1.10`. All other users should upgrade to `8.0.0`.\n\nThese versions add backtrack protection when a custom regex pattern is not provided:\n\n- [0.1.10](https://github.com/pillarjs/path-to-regexp/releases/tag/v0.1.10)\n- [1.9.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v1.9.0)\n- [3.3.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v3.3.0)\n- [6.3.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v6.3.0)\n\nThey do not protect against vulnerable user supplied capture groups. Protecting against explicit user patterns is out of scope for old versions and not considered a vulnerability.\n\nVersion [7.1.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v7.1.0) can enable `strict: true` and get an error when the regular expression might be bad.\n\nVersion [8.0.0](https://github.com/pillarjs/path-to-regexp/releases/tag/v8.0.0) removes the features that can cause a ReDoS.\n\n### Workarounds\n\nAll versions can be patched by providing a custom regular expression for parameters after the first in a single segment. As long as the custom regular expression does not match the text before the parameter, you will be safe. For example, change `/:a-:b` to `/:a-:b([^-/]+)`.\n\nIf paths cannot be rewritten and versions cannot be upgraded, another alternative is to limit the URL length. For example, halving the attack string improves performance by 4x faster.\n\n### Details\n\nUsing `/:a-:b` will produce the regular expression `/^\\/([^\\/]+?)-([^\\/]+?)\\/?$/`. This can be exploited by a path such as `/a${'-a'.repeat(8_000)}/a`. [OWASP](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS) has a good example of why this occurs, but the TL;DR is the `/a` at the end ensures this route would never match but due to naive backtracking it will still attempt every combination of the `:a-:b` on the repeated 8,000 `-a`.\n\nBecause JavaScript is single threaded and regex matching runs on the main thread, poor performance will block the event loop and can lead to a DoS. In local benchmarks, exploiting the unsafe regex will result in performance that is over 1000x worse than the safe regex. In a more realistic environment using Express v4 and 10 concurrent connections, this translated to average latency of ~600ms vs 1ms.\n\n### References\n\n* [OWASP](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS)\n* [Detailed blog post](https://blakeembrey.com/posts/2024-09-web-redos/)\n\n|                |                                                                     |\n|----------------|---------------------------------------------------------------------|\n| Package        | pkg:npm/path-to-regexp@0.1.7                                        |\n| Affected range | <0.1.10                                                             |\n| Fixed version  | 0.1.10                                                              |\n| CVSS Score     |                                                                 7.7 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P |\n"
+              },
+              "properties": {
+                "affected_version": "<0.1.10",
+                "cvssV3": 7.7,
+                "cvssV3_severity": "HIGH",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P",
+                "fixed_version": "0.1.10",
+                "purls": [
+                  "pkg:npm/path-to-regexp@0.1.7"
+                ],
+                "security-severity": "7.7",
+                "tags": [
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-52798",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-52798: Inefficient Regular Expression Complexity"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-52798?s=github&n=path-to-regexp&t=npm&vr=%3C0.1.12",
+              "help": {
+                "text": "### Impact\n\nThe regular expression that is vulnerable to backtracking can be generated in versions before 0.1.12 of `path-to-regexp`, originally reported in CVE-2024-45296\n\n### Patches\n\nUpgrade to 0.1.12.\n\n### Workarounds\n\nAvoid using two parameters within a single path segment, when the separator is not `.` (e.g. no `/:a-:b`). Alternatively, you can define the regex used for both parameters and ensure they do not overlap to allow backtracking.\n\n### References\n\n- https://github.com/advisories/GHSA-9wv6-86v2-598j\n- https://blakeembrey.com/posts/2024-09-web-redos/\n",
+                "markdown": "> ### Impact\n\nThe regular expression that is vulnerable to backtracking can be generated in versions before 0.1.12 of `path-to-regexp`, originally reported in CVE-2024-45296\n\n### Patches\n\nUpgrade to 0.1.12.\n\n### Workarounds\n\nAvoid using two parameters within a single path segment, when the separator is not `.` (e.g. no `/:a-:b`). Alternatively, you can define the regex used for both parameters and ensure they do not overlap to allow backtracking.\n\n### References\n\n- https://github.com/advisories/GHSA-9wv6-86v2-598j\n- https://blakeembrey.com/posts/2024-09-web-redos/\n\n|                |                                                                     |\n|----------------|---------------------------------------------------------------------|\n| Package        | pkg:npm/path-to-regexp@0.1.7                                        |\n| Affected range | <0.1.12                                                             |\n| Fixed version  | 0.1.12                                                              |\n| CVSS Score     |                                                                 7.7 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P |\n"
+              },
+              "properties": {
+                "affected_version": "<0.1.12",
+                "cvssV3": 7.7,
+                "cvssV3_severity": "HIGH",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P",
+                "fixed_version": "0.1.12",
+                "purls": [
+                  "pkg:npm/path-to-regexp@0.1.7"
+                ],
+                "security-severity": "7.7",
+                "tags": [
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-45590",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2024-45590: Asymmetric Resource Consumption (Amplification)"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2024-45590?s=github&n=body-parser&t=npm&vr=%3C1.20.3",
+              "help": {
+                "text": "### Impact\n\nbody-parser <1.20.3 is vulnerable to denial of service when url encoding is enabled. A malicious actor using a specially crafted payload could flood the server with a large number of requests, resulting in denial of service.\n\n### Patches\n\nthis issue is patched in 1.20.3\n\n### References\n\n",
+                "markdown": "> ### Impact\n\nbody-parser <1.20.3 is vulnerable to denial of service when url encoding is enabled. A malicious actor using a specially crafted payload could flood the server with a large number of requests, resulting in denial of service.\n\n### Patches\n\nthis issue is patched in 1.20.3\n\n### References\n\n\n|                |                                                                 |\n|----------------|-----------------------------------------------------------------|\n| Package        | pkg:npm/body-parser@1.20.0                                      |\n| Affected range | <1.20.3                                                         |\n| Fixed version  | 1.20.3                                                          |\n| CVSS Score     |                                                             8.7 |\n| CVSS Vector    | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N |\n"
+              },
+              "properties": {
+                "affected_version": "<1.20.3",
+                "cvssV3": 8.7,
+                "cvssV3_severity": "HIGH",
+                "cvssV3_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+                "fixed_version": "1.20.3",
+                "purls": [
+                  "pkg:npm/body-parser@1.20.0"
+                ],
+                "security-severity": "8.7",
+                "tags": [
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2023-22579",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2023-22579: Access of Resource Using Incompatible Type ('Type Confusion')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2023-22579?s=github&n=sequelize&t=npm&vr=%3C6.28.1",
+              "help": {
+                "text": "### Impact\n\nProviding an invalid value to the `where` option of a query caused Sequelize to ignore that option instead of throwing an error. \n\nA finder call like the following did not throw an error:\n\n```ts\nUser.findAll({\n  where: new Date(),\n});\n```\n\nAs this option is typically used with plain javascript objects, be aware that this only happens at the top level of this option.\n\n### Patches\n\nThis issue has been patched in [`sequelize@6.28.1`](https://github.com/sequelize/sequelize/pull/15699) & [`@sequelize/core@7.0.0.alpha-20`](https://github.com/sequelize/sequelize/pull/15375)\n\n### References\n\nA discussion thread about this issue is open at https://github.com/sequelize/sequelize/discussions/15698\n\nCVE:  CVE-2023-22579\nSnyk: https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-3324090\n",
+                "markdown": "> ### Impact\n\nProviding an invalid value to the `where` option of a query caused Sequelize to ignore that option instead of throwing an error. \n\nA finder call like the following did not throw an error:\n\n```ts\nUser.findAll({\n  where: new Date(),\n});\n```\n\nAs this option is typically used with plain javascript objects, be aware that this only happens at the top level of this option.\n\n### Patches\n\nThis issue has been patched in [`sequelize@6.28.1`](https://github.com/sequelize/sequelize/pull/15699) & [`@sequelize/core@7.0.0.alpha-20`](https://github.com/sequelize/sequelize/pull/15375)\n\n### References\n\nA discussion thread about this issue is open at https://github.com/sequelize/sequelize/discussions/15698\n\nCVE:  CVE-2023-22579\nSnyk: https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-3324090\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/sequelize@6.19.0                     |\n| Affected range | <6.28.1                                      |\n| Fixed version  | 6.28.1                                       |\n| CVSS Score     |                                          9.9 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H |\n"
+              },
+              "properties": {
+                "affected_version": "<6.28.1",
+                "cvssV3": 9.9,
+                "cvssV3_severity": "CRITICAL",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+                "fixed_version": "6.28.1",
+                "purls": [
+                  "pkg:npm/sequelize@6.19.0"
+                ],
+                "security-severity": "9.9",
+                "tags": [
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2023-22578",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2023-22578: Improper Filtering of Special Elements"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2023-22578?s=github&n=sequelize&t=npm&vr=%3C6.29.0",
+              "help": {
+                "text": "### Impact\n\nSequelize 6.28.2 and prior has a dangerous feature where using parentheses in the attribute option would make Sequelize use the string as-is in the SQL\n\n```ts\nUser.findAll({\n  attributes: [\n    ['count(id)', 'count']\n  ]\n});\n```\n\nProduced\n\n```sql\nSELECT count(id) AS \"count\" FROM \"users\"\n```\n\n### Patches\n\nThis feature was deprecated in Sequelize 5, and using it prints a deprecation warning.\n\nThis issue has been patched in [`@sequelize/core@7.0.0.alpha-20`](https://github.com/sequelize/sequelize/pull/15374) and [`sequelize@6.29.0`](https://github.com/sequelize/sequelize/pull/15710). \n\nIn Sequelize 7, it now produces the following:\n\n```sql\nSELECT \"count(id)\" AS \"count\" FROM \"users\"\n```\n\nIn Sequelize 6, it throws an error explaining that we had to introduce a breaking change, and requires the user to explicitly opt-in to either the Sequelize 7 behavior (always escape) or the Sequelize 5 behavior (inline attributes that include `()` without escaping). See https://github.com/sequelize/sequelize/pull/15710 for more information.\n\n### Mitigations\n\nDo not use user-provided content to build your list or attributes. If you do, make sure that attribute in question actually exists on your model by checking that it exists in the `rawAttributes` property of your model first.\n\n---\n\nA discussion thread about this issue is open at https://github.com/sequelize/sequelize/discussions/15694\nCVE: CVE-2023-22578\n",
+                "markdown": "> ### Impact\n\nSequelize 6.28.2 and prior has a dangerous feature where using parentheses in the attribute option would make Sequelize use the string as-is in the SQL\n\n```ts\nUser.findAll({\n  attributes: [\n    ['count(id)', 'count']\n  ]\n});\n```\n\nProduced\n\n```sql\nSELECT count(id) AS \"count\" FROM \"users\"\n```\n\n### Patches\n\nThis feature was deprecated in Sequelize 5, and using it prints a deprecation warning.\n\nThis issue has been patched in [`@sequelize/core@7.0.0.alpha-20`](https://github.com/sequelize/sequelize/pull/15374) and [`sequelize@6.29.0`](https://github.com/sequelize/sequelize/pull/15710). \n\nIn Sequelize 7, it now produces the following:\n\n```sql\nSELECT \"count(id)\" AS \"count\" FROM \"users\"\n```\n\nIn Sequelize 6, it throws an error explaining that we had to introduce a breaking change, and requires the user to explicitly opt-in to either the Sequelize 7 behavior (always escape) or the Sequelize 5 behavior (inline attributes that include `()` without escaping). See https://github.com/sequelize/sequelize/pull/15710 for more information.\n\n### Mitigations\n\nDo not use user-provided content to build your list or attributes. If you do, make sure that attribute in question actually exists on your model by checking that it exists in the `rawAttributes` property of your model first.\n\n---\n\nA discussion thread about this issue is open at https://github.com/sequelize/sequelize/discussions/15694\nCVE: CVE-2023-22578\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/sequelize@6.19.0                     |\n| Affected range | <6.29.0                                      |\n| Fixed version  | 6.29.0                                       |\n| CVSS Score     |                                         10.0 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H |\n"
+              },
+              "properties": {
+                "affected_version": "<6.29.0",
+                "cvssV3": 10,
+                "cvssV3_severity": "CRITICAL",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+                "fixed_version": "6.29.0",
+                "purls": [
+                  "pkg:npm/sequelize@6.19.0"
+                ],
+                "security-severity": "10.0",
+                "tags": [
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2023-25813",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2023-25813: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+              },
+              "helpUri": "https://scout.docker.com/v/CVE-2023-25813?s=github&n=sequelize&t=npm&vr=%3C6.19.1",
+              "help": {
+                "text": "### Impact\n\nThe SQL injection exploit is related to replacements. Here is such an example: \n\nIn the following query, some parameters are passed through replacements, and some are passed directly through the `where` option.\n\n```typescript\nUser.findAll({\n  where: or(\n    literal('soundex(\"firstName\") = soundex(:firstName)'),\n    { lastName: lastName },\n  ),\n  replacements: { firstName },\n})\n```\n\nThis is a very legitimate use case, but this query was vulnerable to SQL injection due to how Sequelize processed the query: Sequelize built a first query using the `where` option, then passed it over to `sequelize.query` which parsed the resulting SQL to inject all `:replacements`.\n\nIf the user passed values such as\n\n```json\n{\n  \"firstName\": \"OR true; DROP TABLE users;\",\n  \"lastName\": \":firstName\"\n}\n```\n\nSequelize would first generate this query:\n\n```sql\nSELECT * FROM users WHERE soundex(\"firstName\") = soundex(:firstName) OR \"lastName\" = ':firstName'\n```\n\nThen would inject replacements in it, which resulted in this:\n\n```sql\nSELECT * FROM users WHERE soundex(\"firstName\") = soundex('OR true; DROP TABLE users;') OR \"lastName\" = ''OR true; DROP TABLE users;''\n```\n\nAs you can see this resulted in arbitrary user-provided SQL being executed.\n\n### Patches\n\nThe issue was fixed in Sequelize 6.19.1\n\n### Workarounds\n\nDo not use the `replacements` and the `where` option in the same query if you are not using Sequelize >= 6.19.1 \n\n### References\n\nSee this thread for more information: https://github.com/sequelize/sequelize/issues/14519\n\nSnyk: https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-2932027\n",
+                "markdown": "> ### Impact\n\nThe SQL injection exploit is related to replacements. Here is such an example: \n\nIn the following query, some parameters are passed through replacements, and some are passed directly through the `where` option.\n\n```typescript\nUser.findAll({\n  where: or(\n    literal('soundex(\"firstName\") = soundex(:firstName)'),\n    { lastName: lastName },\n  ),\n  replacements: { firstName },\n})\n```\n\nThis is a very legitimate use case, but this query was vulnerable to SQL injection due to how Sequelize processed the query: Sequelize built a first query using the `where` option, then passed it over to `sequelize.query` which parsed the resulting SQL to inject all `:replacements`.\n\nIf the user passed values such as\n\n```json\n{\n  \"firstName\": \"OR true; DROP TABLE users;\",\n  \"lastName\": \":firstName\"\n}\n```\n\nSequelize would first generate this query:\n\n```sql\nSELECT * FROM users WHERE soundex(\"firstName\") = soundex(:firstName) OR \"lastName\" = ':firstName'\n```\n\nThen would inject replacements in it, which resulted in this:\n\n```sql\nSELECT * FROM users WHERE soundex(\"firstName\") = soundex('OR true; DROP TABLE users;') OR \"lastName\" = ''OR true; DROP TABLE users;''\n```\n\nAs you can see this resulted in arbitrary user-provided SQL being executed.\n\n### Patches\n\nThe issue was fixed in Sequelize 6.19.1\n\n### Workarounds\n\nDo not use the `replacements` and the `where` option in the same query if you are not using Sequelize >= 6.19.1 \n\n### References\n\nSee this thread for more information: https://github.com/sequelize/sequelize/issues/14519\n\nSnyk: https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-2932027\n\n|                |                                              |\n|----------------|----------------------------------------------|\n| Package        | pkg:npm/sequelize@6.19.0                     |\n| Affected range | <6.19.1                                      |\n| Fixed version  | 6.19.1                                       |\n| CVSS Score     |                                         10.0 |\n| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H |\n"
+              },
+              "properties": {
+                "affected_version": "<6.19.1",
+                "cvssV3": 10,
+                "cvssV3_severity": "CRITICAL",
+                "cvssV3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+                "fixed_version": "6.19.1",
+                "purls": [
+                  "pkg:npm/sequelize@6.19.0"
+                ],
+                "security-severity": "10.0",
+                "tags": [
+                  "CRITICAL"
+                ]
+              }
+            }
+          ],
+          "version": "1.18.4"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2024-47764",
+          "ruleIndex": 0,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-47764        \n  Severity        : LOW                   \n  Package         : pkg:npm/cookie@0.5.0  \n  Affected range  : <0.7.0                \n  Fixed version   : 0.7.0                 \n  EPSS Score      : 0.000850              \n  EPSS Percentile : 0.249800              \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-5889",
+          "ruleIndex": 1,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2025-5889                                                                                                                                                                   \n  Severity        : LOW                                                                                                                                                                             \n  Package         : pkg:npm/brace-expansion@1.1.11                                                                                                                                                  \n  Affected range  : >=1.0.0,<=1.1.11                                                                                                                                                                \n  Fixed version   : 1.1.12                                                                                                                                                                          \n  CVSS Score      : 1.3                                                                                                                                                                             \n  CVSS Vector     : CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X  \n  EPSS Score      : 0.000170                                                                                                                                                                        \n  EPSS Percentile : 0.032930                                                                                                                                                                        \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-5889",
+          "ruleIndex": 1,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2025-5889                                                                                                                                                                   \n  Severity        : LOW                                                                                                                                                                             \n  Package         : pkg:npm/brace-expansion@2.0.1                                                                                                                                                   \n  Affected range  : >=2.0.0,<=2.0.1                                                                                                                                                                 \n  Fixed version   : 2.0.2                                                                                                                                                                           \n  CVSS Score      : 1.3                                                                                                                                                                             \n  CVSS Vector     : CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X  \n  EPSS Score      : 0.000170                                                                                                                                                                        \n  EPSS Percentile : 0.032930                                                                                                                                                                        \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-43796",
+          "ruleIndex": 2,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-43796                                                   \n  Severity        : LOW                                                              \n  Package         : pkg:npm/express@4.18.1                                           \n  Affected range  : <4.20.0                                                          \n  Fixed version   : 4.20.0                                                           \n  CVSS Score      : 2.3                                                              \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L  \n  EPSS Score      : 0.000650                                                         \n  EPSS Percentile : 0.200720                                                         \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-43799",
+          "ruleIndex": 3,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-43799                                                   \n  Severity        : LOW                                                              \n  Package         : pkg:npm/send@0.18.0                                              \n  Affected range  : <0.19.0                                                          \n  Fixed version   : 0.19.0                                                           \n  CVSS Score      : 2.3                                                              \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L  \n  EPSS Score      : 0.000950                                                         \n  EPSS Percentile : 0.269620                                                         \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-43800",
+          "ruleIndex": 4,
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-43800                                                   \n  Severity        : LOW                                                              \n  Package         : pkg:npm/serve-static@1.15.0                                      \n  Affected range  : <1.16.0                                                          \n  Fixed version   : 1.16.0                                                           \n  CVSS Score      : 2.3                                                              \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L  \n  EPSS Score      : 0.002800                                                         \n  EPSS Percentile : 0.510350                                                         \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-22580",
+          "ruleIndex": 5,
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "  Vulnerability   : CVE-2023-22580                                \n  Severity        : MEDIUM                                        \n  Package         : pkg:npm/sequelize@6.19.0                      \n  Affected range  : <6.28.1                                       \n  Fixed version   : 6.28.1                                        \n  CVSS Score      : 5.3                                           \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N  \n  EPSS Score      : 0.001100                                      \n  EPSS Percentile : 0.300490                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-29041",
+          "ruleIndex": 6,
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-29041                                \n  Severity        : MEDIUM                                        \n  Package         : pkg:npm/express@4.18.1                        \n  Affected range  : <4.19.2                                       \n  Fixed version   : 4.19.2                                        \n  CVSS Score      : 6.1                                           \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  \n  EPSS Score      : 0.000390                                      \n  EPSS Percentile : 0.112820                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-56200",
+          "ruleIndex": 7,
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "  Vulnerability   : CVE-2025-56200                                \n  Severity        : MEDIUM                                        \n  Package         : pkg:npm/validator@13.11.0                     \n  Affected range  : <13.15.20                                     \n  Fixed version   : 13.15.20                                      \n  CVSS Score      : 6.1                                           \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N  \n  EPSS Score      : 0.000460                                      \n  EPSS Percentile : 0.140000                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-33883",
+          "ruleIndex": 8,
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-33883                                                   \n  Severity        : MEDIUM                                                           \n  Package         : pkg:npm/ejs@3.1.7                                                \n  Affected range  : <3.1.10                                                          \n  Fixed version   : 3.1.10                                                           \n  CVSS Score      : 6.9                                                              \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N  \n  EPSS Score      : 0.012630                                                         \n  EPSS Percentile : 0.788100                                                         \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-45296",
+          "ruleIndex": 9,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-45296                                                       \n  Severity        : HIGH                                                                 \n  Package         : pkg:npm/path-to-regexp@0.1.7                                         \n  Affected range  : <0.1.10                                                              \n  Fixed version   : 0.1.10                                                               \n  CVSS Score      : 7.7                                                                  \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P  \n  EPSS Score      : 0.000640                                                             \n  EPSS Percentile : 0.198370                                                             \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-52798",
+          "ruleIndex": 10,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-52798                                                       \n  Severity        : HIGH                                                                 \n  Package         : pkg:npm/path-to-regexp@0.1.7                                         \n  Affected range  : <0.1.12                                                              \n  Fixed version   : 0.1.12                                                               \n  CVSS Score      : 7.7                                                                  \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:P  \n  EPSS Score      : 0.000860                                                             \n  EPSS Percentile : 0.251930                                                             \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-45590",
+          "ruleIndex": 11,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2024-45590                                                   \n  Severity        : HIGH                                                             \n  Package         : pkg:npm/body-parser@1.20.0                                       \n  Affected range  : <1.20.3                                                          \n  Fixed version   : 1.20.3                                                           \n  CVSS Score      : 8.7                                                              \n  CVSS Vector     : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N  \n  EPSS Score      : 0.020720                                                         \n  EPSS Percentile : 0.833930                                                         \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-22579",
+          "ruleIndex": 12,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2023-22579                                \n  Severity        : CRITICAL                                      \n  Package         : pkg:npm/sequelize@6.19.0                      \n  Affected range  : <6.28.1                                       \n  Fixed version   : 6.28.1                                        \n  CVSS Score      : 9.9                                           \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H  \n  EPSS Score      : 0.001230                                      \n  EPSS Percentile : 0.321220                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-22578",
+          "ruleIndex": 13,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2023-22578                                \n  Severity        : CRITICAL                                      \n  Package         : pkg:npm/sequelize@6.19.0                      \n  Affected range  : <6.29.0                                       \n  Fixed version   : 6.29.0                                        \n  CVSS Score      : 10.0                                          \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H  \n  EPSS Score      : 0.001610                                      \n  EPSS Percentile : 0.375100                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-25813",
+          "ruleIndex": 14,
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "  Vulnerability   : CVE-2023-25813                                \n  Severity        : CRITICAL                                      \n  Package         : pkg:npm/sequelize@6.19.0                      \n  Affected range  : <6.19.1                                       \n  Fixed version   : 6.19.1                                        \n  CVSS Score      : 10.0                                          \n  CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H  \n  EPSS Score      : 0.050780                                      \n  EPSS Percentile : 0.893300                                      \n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/package-lock.json"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
