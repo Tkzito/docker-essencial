@@ -1,0 +1,24 @@
+# Definição dos serviços (containers) que compõem nossa aplicação
+services:
+  # Nome do serviço dentro da rede do Docker Compose
+  rota42-web:
+    # Configurações de construção da imagem
+    build:
+      # Define o diretório atual (.) como contexto para o build
+      context: .
+      # Especifica o nome do arquivo de instruções para criar a imagem
+      dockerfile: Dockerfile
+
+    # Define o nome e a tag da imagem que será criada
+    image: rota42-institucional:latest
+
+    # Define um nome fixo para o container, facilitando a identificação (ex: docker ps)
+    container_name: rota42-institucional
+
+    # Mapeamento de portas: "porta_host:porta_container"
+    # Acessaremos via localhost:8080, que será redirecionado para a porta 80 do NGINX
+    ports:
+      - "8080:80"
+
+    # Política de reinicialização: reinicia automaticamente a menos que seja parado manualmente
+    restart: unless-stopped

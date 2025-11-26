@@ -1,0 +1,9 @@
+# Ignora arquivos desnecessários na imagem Docker
+Dockerfile
+compose.yaml
+docker-compose.yaml
+.dockerignore
+.git
+.gitignore
+README.md
+*.md
