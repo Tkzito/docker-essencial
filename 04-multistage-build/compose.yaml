@@ -1,0 +1,7 @@
+services:
+  converter-go:
+    build: .
+    image: rota42-go-converter:latest
+    # Mapeamos o diretório atual para /app para que o programa encontre os arquivos de vídeo
+    volumes:
+      - .:/app
